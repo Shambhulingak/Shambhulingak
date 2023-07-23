@@ -1,23 +1,249 @@
+# GIFfusion 💥
 
-<h1 align="center">Hi 👋, I'm Shambhulinga</h1>
-<h3 align="center">A passionate Software Engineering from India</h3>
-<img align="right"alt="coding"width="400"src="https://user-images.githubusercontent.com/55389276/140866485-8fb1c876-9a8f-4d6a-98dc-08c4981eaf70.gif">
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=shambhulingak&label=Profile%20views&color=0e75b6&style=flat" alt="shambhulingak" /> </p>
-
-<p align="left"> <a href="https://twitter.com/@appuyalgi42" target="blank"><img src="https://img.shields.io/twitter/follow/@appuyalgi42?logo=twitter&style=for-the-badge" alt="@appuyalgi42" /></a> </p>
-
-- 📫 How to reach me **shambhulinga42@hotmail.com**
-
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://twitter.com/@appuyalgi42" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="@appuyalgi42" height="30" width="40" /></a>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/7529846/220882002-72cbfdef-876a-4cb2-9f41-e5989e769868.gif" width="256" title="hover text">
 </p>
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://developer.android.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="android" width="40" height="40"/> </a> <a href="https://www.arduino.cc/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="arduino" width="40" height="40"/> </a> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://www.oracle.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg" alt="oracle" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://unity.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg" alt="unity" width="40" height="40"/> </a> </p>
+Giffusion is a Web UI for generating GIFs and Videos using Stable Diffusion.
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=shambhulingak&show_icons=true&locale=en&layout=compact" alt="shambhulingak" /></p>
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DN6/giffusion/blob/main/Giffusion.ipynb)
+[![Open In Comet](https://custom-icon-badges.herokuapp.com/badge/comet__ml-Open_In_Comet-orange?logo=logo_comet_ml)](https://www.comet.com/team-comet-ml/giffusion/view/CzxqbNrydKqHCaYhNEnbyrpnz/panels?utm_source=tds&utm_medium=social&utm_campaign=stable_diffusion)
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=shambhulingak&show_icons=true&locale=en" alt="shambhulingak" /></p>
+## Features
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=shambhulingak&" alt="shambhulingak" /></p>
+### Bring Your Own Pipeline
+
+Giffusion supports using any pipeline and compatible checkpoint from the [Diffusers](https://huggingface.co/docs/diffusers/index) library. Simply paste in the checkpoint name and pipeline name in the `Pipeline Settings`
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/7529846/220323500-ae12c752-9cfe-441e-ba03-22a0ea787139.gif" width="800" title="hover text">
+</p>
+
+#### ControlNet Support
+
+Giffusion allows you to use the `StableDiffusionControlNetPipeline`. Simply paste in the ControlNet checkpoint you would like to use to load in the Pipeline.
+
+
+### Multiframe Generation
+
+Giffusion follows a prompt syntax similar to the one used in [Deforum Art's Stable Diffusion Notebook](https://deforum.github.io/)
+
+```
+0: a picture of a corgi
+60: a picture of a lion
+```
+
+The first part of the prompt indicates a key frame number, while the text after the colon is the prompt used by the model to generate the image.
+
+In the example above, we're asking the model to generate a picture of a Corgi at frame 0 and a picture of a lion at frame 60. So what about all the images in between these two key frames? How do they get generated?
+
+You might recall that Diffusion Models work by turning noise into images. Stable Diffusion turns a noise tensor into a latent embedding in order to save time and memory when running the diffusion process. This latent embedding is fed into a decoder to produce the image.
+
+The inputs to our model are a noise tensor and text embedding tensor. Using our key frames as our start and end points, we can produce images in between these frames by interpolating these tensors.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/7529846/204506200-49f91bd1-396f-4cf1-927c-c91b885f5c4a.gif" width="256" title="hover text">
+</p>
+
+### Inspiration Button
+
+Creating prompts can be challenging. Click the `Give me some inspiration` button to automatically generate prompts for you.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/7529846/220324203-444c1720-c71b-4ccf-b08f-5b20668b7f98.gif" width="800" title="hover text">
+</p>
+
+You can even provide a list of topics for the inspiration button to use as a starting point.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/7529846/220324835-fbbae3be-9a9a-48f9-a773-5e45c6274ed2.gif" width="800" title="hover text">
+</p>
+
+
+### Multimedia Support
+
+Augment the image generation process with additional media inputs
+
+<details>
+<summary>Image Input</summary>
+
+You can seed the generation process with an inital image. Upload your file using the, using the `Image Input` dropdown.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/7529846/220880564-dba393c5-6023-4539-a59c-c33758769500.gif" width="800" title="hover text">
+</p>
+<p align="center">
+<a align="center" href="https://www.krea.ai/prompt/184bf3cf-ec0d-4ff8-b4f1-45577799700b">Image Source</a>
+</p>
+</details>
+
+<details>
+<summary>Audio Input</summary>
+
+Drive your GIF and Video animations using audio.
+
+https://user-images.githubusercontent.com/7529846/204550897-70777873-30ca-46a9-a74e-65b6ef429958.mp4
+
+In order to use audio to drive your animations,
+
+1. Head over to the `Audio Input` dropdown and upload your audio file.
+2. Click `Get Key Frame Information`. This will extract key frames from the audio based on the `Audio Component` you have selected. You can extract key frames based on the percussive, harmonic or combined audio components of your file.
+
+Additionally, timestamp information for these key frames is also extracted for reference in case you would like to sync your prompts to a particular time in the audio.
+
+**Note:** The key frames will change based the frame rate that you have set in the UI.
+</details>
+
+<details>
+<summary>Video Input</summary>
+
+You can use frames from an existing video as initial images in the diffusion process.
+
+https://user-images.githubusercontent.com/7529846/204550451-5d2162dc-5d6b-4ecd-b1ed-c15cb56bc224.mp4
+
+To use video initialization:
+
+1. Head over to the `Video Input` dropdown
+
+2. Upload your file. Click `Get Key Frame Information` to extract the maximum number of frames present in the video and to update the frame rate setting in the UI to match the frame rate of the input video.
+
+</details>
+
+#### Resampling Output Generations
+
+You can resample videos and GIFs created in the output tab and send them either to the Image Input or Video Input.
+
+<details>
+<summary>Resampling to Image Input</summary>
+
+To sample an image from a video, select the frame id you want to sample from your output video or GIF and click on `Send to Image Input`
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/7529846/220325938-22438722-d4ac-4a35-995f-51d8dbafaa34.gif" width="800" title="hover text">
+</p>
+</details>
+
+<details>
+<summary>Resampling to Video Input</summary>
+
+To resample a video, click on `Send to Video Input`
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/7529846/220322852-f2fab800-43dc-41b8-bdb4-c4057bb65a5f.gif" width="800" title="hover text">
+</p>
+
+</details>
+
+### Saving to Comet
+
+GIFfusion also support saving prompts, generated GIFs/Videos, images, and settings to [Comet](https://www.comet.com/site/) so you can keep track of your generative experiments.
+
+[Check out an example project here with some of my GIFs!](https://www.comet.com/team-comet-ml/giffusion?shareable=Jf4go5RcGqryr6wq1uBudgVVS)
+
+## Diffusion Settings
+
+This section covers all the components in the Diffusion Settings dropdown.
+
+1. **Use Fixed Latent:** Use the same noise latent for every frame of the generation process. This is useful if you want to keep the noise latent fixed while interpolating over just the prompt embeddings.
+
+2. **Use Prompt Embeds:** By default, Giffusion converts your prompts into embeddings and interpolates between the prompt embeddings for the in between frames. If you disable this option, Giffusion will forward fill the text prompts between frames instead. If you are using the `ComposableDiffusion` pipeline or would like to use the prompt embedding function of the pipeline directly, disable this option.
+
+3. **Numerical Seed:** Seed for the noise latent generation process. If `Use Fixed Latent` isn't set, this seed is used to generate a schedule that provides a unique seed for each key frame.
+
+4. **Number of Iteration Steps:** Number of steps to use in the generation process.
+
+5. **Classifier Free Guidance Scale:** Higher guidance scale encourages generated images that are closely linked to the text prompt, usually at the expense of lower image quality.
+
+6. **Image Strength:** Indicates how much to transform the reference image. Must be between 0 and 1. The image will be used as a starting point, adding more noise to it larger the strength. This is only applicable to Pipelines that support images as inputs.
+
+7. **Use Default Pipeline Scheduler:** Select to use the scheduler that has been preconfigured with the Pipeline.
+
+8. **Scheduler:**  Schedulers take in the output of a trained model, a sample which the diffusion process is iterating on, and a timestep to return a denoised sample. The different schedulers require a different number of iteration steps to produce good results. Use this selector to experiment with different schedulers and pipelines.
+
+9. **Scheduler Arguments:** Additional Keyword arguments to pass to the selected scheduler.
+
+10. **Batch Size:** Set the batch size used in the generation process. If you have access to a GPU with more memory, increase the batch size to increase the speed of the generation process.
+
+11. **Image Height:** By default, generated images will have a height of 512 pixels. Certain models and pipelines support generating higher resolution images. Adjust this setting to account for those configurations. If an Image or Video input is provided, the height is set to the height of the original input.
+
+12. **Image Width:** By default, generated images will have a width of 512 pixels. Certain models and pipelines support generating higher resolution images. Adjust this setting to account for those configurations. If an Image or Video input is provided, the width is set to the width of the original input.
+
+13. **Number of Latent Channels:** This is used to set the channel dimension of the noise latent. Certain Pipelines, e.g. `InstructPix2Pix` require the number of latent channels to be different from the number of input channels of the Unet model. The default value of `4` should work for a majority of pipelines and models.
+
+14. **Additional Pipeline Arguments:** Diffuser Pipelines support a wide variety of arguments depending on the task. Use this textbox to input a dictionary of values that will be passed to the pipeline object as keyword arguments. e.g. Passing the Image Guidance Scale parameter to the InstructPix2PixPipeline
+
+## Animation Settings
+
+### Interpolation Type
+
+Giffusion generates animations by first generating prompt embeddings and initial latents for the provided key frames and then interpolating the inbetween values using spherical interpolation. The schedule that controls the rate of change between interpolated values is `linear` by default.
+
+You are free to change this schedule to using this dropdown to either `sine` or `curve`.
+
+**Sine:**
+
+Using the `sine` schedule will interpolate between your start and end latents and embeddings using the following function `np.sin(np.pi * frequency) ** 2` with a default frequency of value of `1.0`. This will produce a single oscillation that will cause the generated output to move from your start prompt to the end prompt and back. Doubling the frequency double the number of oscillations.
+
+Sine interpolation also supports using multiple frequencies. An input of `1.0, 2.0` to the `Interpolation Arguments` will combine two sine waves with those frequencies.
+
+<details>
+<summary>Sine Interpolation</summary>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/7529846/225011513-cb4a1940-cc15-47b5-8c83-b86e88faeb3a.gif" width="512" title="hover text">
+</p>
+
+</details>
+
+**Curve:**
+
+You can also manually define an interpolation curve for your animation using [Chigozie Nri's Keyframe DSL](https://www.chigozie.co.uk/keyframe-string-generator/) which follows the [Deforum format.](https://docs.google.com/document/d/1RrQv7FntzOuLg4ohjRZPVL7iptIyBhwwbcEYEW2OfcI/edit)
+
+An example curve would be
+
+```
+0: (0.0), 50: (1.0), 60: (0.5)
+```
+
+Curve values must be between 0.0 and 1.0
+
+### Motion Settings
+
+Giffusion allows you to use key frame animation strings to control the angle, zoom and translation of the image across frames. These animation strings follow the exact format as [Deforum](https://docs.google.com/document/d/1RrQv7FntzOuLg4ohjRZPVL7iptIyBhwwbcEYEW2OfcI/edit). Currently, Giffusion only supports 2D animation and allows you to control the following parameters
+
+- Zoom: Scales the canvas size, multiplicatively. 1 is static, with numbers greater than 1 moving forwards and numbers less than 1 moving backward.
+- Angle:  Rolls the canvas clockwise or counterclockwise in degrees per frame. This parameter uses positive values to roll counterclockwise and negative values to roll clockwise.
+- Translation X: Number of pixels to shift in the X direction. Moves the canvas left or right. This parameter uses positive values to move right and negative values to move left.
+- Translation Y: Number of pixels to shift in the Y direction. Moves the canvas up or down. This parameter uses positive values to move up and negative values to move down.
+
+**Zoom Parameter Example**
+```
+0: (1.05),1: (1.05),2: (1.05),3: (1.05),4: (1.05),5: (1.05),6: (1.05),7: (1.05),8: (1.05),9: (1.05),10: (1.05)
+```
+
+**Angle Parameter Example**
+```
+0: (10.0),1: (10.0),2: (10.0),3: (10.0),4: (10.0),5: (10.0),6: (10.0),7: (10.0),8: (10.0),9: (10.0),10: (10.0)
+```
+
+**Translation X/Y Parameter Example**
+```
+0: (5.0),1: (5.0),2: (5.0),3: (5.0),4: (5.0),5: (5.0),6: (5.0),7: (5.0),8: (5.0),9: (5.0),10: (5.0)
+```
+
+## Output Settings
+
+1. **Output Format:** Set the output format to either be a GIF or an MP4 video.
+2. **Frame Rate:** Set the frame rate for the output.
+
+## References
+
+Giffusion would not be possible without the following resources ❤️
+
+1. Prompt format is based on the work from [Deforum Art](https://deforum.github.io/)
+2. Inspiration Button uses the [Midjourney Prompt Generator](https://huggingface.co/spaces/doevent/prompt-generator) Space by DoEvent 
+3. [Stable Diffusion Videos with Audio Reactivity](https://github.com/nateraw/stable-diffusion-videos)
+4. [Comet ML Project with some of the things made with Giffusion](https://www.comet.com/team-comet-ml/giffusion/view/CzxqbNrydKqHCaYhNEnbyrpnz/panels?utm_source=tds&utm_medium=social&utm_campaign=stable_diffusion)
+5. [Gradio Docs](https://gradio.app/docs/): The UI for this project is built with Gradio.
+6. [Hugging Face Diffusers](https://huggingface.co/docs/diffusers/index)
+7. [Keyframed](https://github.com/dmarx/keyframed) for curve interpolation
